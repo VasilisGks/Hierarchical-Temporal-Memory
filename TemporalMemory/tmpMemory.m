@@ -9,16 +9,16 @@ function [activeSegments,activeSt2,predictedSt,learnSt,synapsesWeight,segmentSyn
 %Parameter Initialization 
 %TODO : TM in a Class
 colNum = 512;         %total number of columns in SP
-cellNum=8;           %cells per column 
+cellNum=4;           %cells per column 
 size1=colNum*cellNum;
-activationThreshold=6;
+activationThreshold=3;
 initialPermanence=0.21;
-connectedPermanence=0.65;
-minThreshold=2;
+connectedPermanence=0.50;
+minThreshold=1;
 maxNewSynapsesCount=10;
 predictedDecrement=0.002;    
-incrWeight=0.07;             %reinforcement of the currently active segment
-decrWeight=0.07; 
+incrWeight=0.1;             %reinforcement of the currently active segment
+decrWeight=0.1; 
 %maxSegmentPerCell=255;
 %maxSynapsesPerSegment=255;
 %+ threshold , conn_perm,init_perm,inc_perm,dec_perm
