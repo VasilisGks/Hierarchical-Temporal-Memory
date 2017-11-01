@@ -3,7 +3,7 @@ function [ spHistory ] = testSPfun()
 %   Detailed explanation goes here
 %% Test spatial pooler
 %clear; close all;
-
+ 
 ncolumns= 2048; ninput= [16*25,5*25,3*25];%256;
 encParams= struct(...
   'ninput',ninput, ...
