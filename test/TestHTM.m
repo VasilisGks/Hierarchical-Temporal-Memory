@@ -85,7 +85,7 @@ for stepNum=1:N
     mtBar(stepNum)=sum(anomaly_score(t0)/w0);
     L(stepNum)=1-qfunc((mtBar-mt) / var);
    end
-   %%%%%%%%%%%
+   %%%%%%%%%%% 
    
    if stepNum==N
         figure(1)
