@@ -99,8 +99,6 @@ for i=1:length(reinfArray)
   j=reinfArray(i);            
   synapsesWeight(j,:)=synapsesWeight(j,:)+((incrWeight*(segmentSynapses(j,:)==1)))-((decrWeight*(segmentSynapses(j,:)<connectedPermanence)).*(synapsesWeight(j,:)~=0));
 end
-%NEW According to latest TM ,BAMI .LINE 49-54 .Punish inactive synapses
-%last step . All existing synapses reinforced by initalPermanence value
 synapsesWeight=synapsesWeight+(synapsesWeight~=0)*initialPermanence;
 synapsesWeight=((synapsesWeight<=1).*synapsesWeight) + (synapsesWeight>1); %weights limit value  Weight_Borders1
 segmentSynapses=synapsesWeight>=connectedPermanence; %activate synapses above threshold
@@ -108,4 +106,4 @@ segmentSynapses=synapsesWeight>=connectedPermanence; %activate synapses above th
 actvSynapses=and(segmentSynapses,repmat(activeSt2,size1,1));
 activeSegments=sum(actvSynapses');
 %sum up active cells of synapses
-predictedSt=(activeSegments>=activationThreshold); %NEWWW.*(activeSt2==0); %Enter pred.state to cells that are not active in current t
+predictedSt=(activeSegments>=activationThreshold); 
