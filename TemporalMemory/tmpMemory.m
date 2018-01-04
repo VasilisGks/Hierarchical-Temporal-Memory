@@ -120,3 +120,4 @@ actvSynapses=and(segmentSynapses,repmat(activeSt2,size1,1));
 activeSegments=sum(actvSynapses');
 %sum up active cells of synapses
 predictedSt=(activeSegments>=activationThreshold); %NEWWW.*(activeSt2==0); %Enter pred.state to cells that are not active in current t
+ 
