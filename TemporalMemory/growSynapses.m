@@ -1,9 +1,9 @@
 function [ segmentSynapses,synapsesWeight ] = growSynapses( segmentSynapses,synapsesWeight,learnStPrev,indx  )
 
-maxNewSynapsesCount=10;
+maxNewSynapsesCount=32;
 initialPermanence=0.21;
-maxSynapsesPerSegment=63; %40 (OLD:val according to python impl.NEW=255/4=63.5~(63) = 63
-connectedPermanence=0.65;
+maxSynapsesPerSegment=32; %40 (OLD:val according to python impl.NEW=255/4=63.5~(63) = 63
+connectedPermanence=0.5;
 
  if sum(segmentSynapses(indx,:))<maxSynapsesPerSegment
     newSynapses=abs(maxNewSynapsesCount-sum(synapsesWeight(indx,:)~=0));
