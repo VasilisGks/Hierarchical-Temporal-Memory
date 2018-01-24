@@ -49,6 +49,8 @@ dec= decoder.SDRClassifier(prediction_timesteps, decoderAlpha, cellNum*colNum, e
 %%%%%%%%%%%%%%%%
 predError=0;
 energyMat=load('prediction-hourly.mat');
+
+%Backtracking Code goes here
 for stepNum=1:N
     columns=spHistory(1:colNum,stepNum);
     [ activeSt2,predictedSt,learnSt ] = resetState( cellNum,colNum,learnSt );
