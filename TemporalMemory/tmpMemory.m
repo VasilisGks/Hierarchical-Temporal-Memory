@@ -72,7 +72,7 @@ if flag~=1   %IF current column isn't bursting
      %end  
      %%REMOVED
   end     
-else   %IF columns bursted
+else   %IF columns bursted  
  if (flag==1)
  id=(index-1)*cellNum+1; %Now finding cell with most active synapses in busted columns
  %Multiply -Weights for each cell with mask Array(ones(..)) with -all
