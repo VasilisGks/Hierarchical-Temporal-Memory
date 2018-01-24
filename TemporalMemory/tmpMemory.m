@@ -31,7 +31,7 @@ activMat=tmpArray*predCellsPrev;  %Activate Cells with predictPreviousState=true
 numOfBurstingCols=length(find((gather(activMat)==0).*activeCols'));
 numOfActiveCols=length(find(activeCols));
 act=find(activeCols); %indexes that map to active columns
-%NEW ADD%%%%%%%%%%%%%%%
+
 activeStPrev=reshape(prevActiveSt,cellNum,colNum); %TODW : !!Check an ontws swsto..
 inactiveCells=((activeCols==0)'.*activeStPrev); %flat active state array(inactive cols) ?????
 inactiveCells2=reshape(inactiveCells,1,size1);
@@ -41,7 +41,8 @@ inactArray=(repmat(inactiveCells2,size1,1)); %2d -- with size: (colNum*cellNum ^
 inactSynapses=inactArray.*(synapsesWeight>=connectedPermanence).*((sum(synapsesWeight'))>=(activationThreshold)); %TODO :!!To minthreshold kalyptei??/ 
 synapsesWeight=synapsesWeight-(inactSynapses*predictedDecrement);
 %cells from inactive cols,with weights > 0,else 0s
-%%%%END NEW%%%%%%
+%Enable BackTracking
+
 for i=1:length(act)   
   flag=0;
   index=act(i);  
